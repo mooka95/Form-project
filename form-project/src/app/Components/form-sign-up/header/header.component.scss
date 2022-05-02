@@ -1,0 +1,35 @@
+
+.header{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    border-bottom:2px solid rgba(203, 199, 199, 0.5);
+    padding:1.5rem 2rem;
+    &__logo{
+        font-weight: bold;
+        font-size:1.6rem;
+        text-transform: uppercase;
+    }
+    &__signin{
+        display:flex;
+        font-weight: 600;
+        flex-direction:row;
+    padding: 10px 0;
+        
+        & div{
+           font-size:0.9rem
+        }
+        & div:last-child{
+            padding-left: 3px;
+            color:blue;
+        }
+
+
+    }
+    
+
+}
+.container-fluid{
+    margin: 0;
+    padding:0
+}

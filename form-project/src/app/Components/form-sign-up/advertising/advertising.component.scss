@@ -1,0 +1,15 @@
+.advertise:not(:last-child){
+    padding-bottom: 2rem;
+ 
+ 
+}
+
+.advertise:not(:first-child){
+    padding-inline-end: 2rem;
+ 
+
+}
+.icon{
+    color: #6969E3;
+    padding-inline-end: 0.5rem;
+}

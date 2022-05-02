@@ -1,0 +1,61 @@
+<form  [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" class="form-control" id="name"  formControlName="name" >
+      <div
+      *ngIf="!signUpForm.get('name').valid && signUpForm.get('name').touched"
+      class="error">
+      <div *ngIf="signUpForm.get('name').errors['minlength']">please enter 3 characters or more</div>
+      <div *ngIf="signUpForm.get('name').errors['required']">This field is required!</div>
+
+    </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email"  formControlName="email" >
+      <div
+      *ngIf="!signUpForm.get('email').valid && signUpForm.get('email').touched"
+      class="error">
+      <div *ngIf="signUpForm.get('email').errors['email']">please enter valid email</div>
+      <div *ngIf="signUpForm.get('email').errors['required']">This field is required!</div>
+
+    </div>
+
+    </div>
+    <div class="form-group">
+        <label for="PhoneNumber">Phone Number</label>
+        <input type="tel" class="form-control" id="PhoneNumber"  formControlName="PhoneNumber" >
+        <div
+        *ngIf="!signUpForm.get('PhoneNumber').valid && signUpForm.get('PhoneNumber').touched"
+        class="error">
+        <div *ngIf="signUpForm.get('PhoneNumber').errors['required']" >This field is required!</div>
+  
+      </div>
+      </div>
+      <div class="form-group">
+        <label for="birthday">Birthday:</label>
+        <input type="date" class="form-control" id="birthday"  formControlName="birthday" >
+        <div
+        *ngIf="!signUpForm.get('birthday').valid && signUpForm.get('birthday').touched"
+        class="error">
+        <div *ngIf="signUpForm.get('birthday').errors['required']">This field is required!</div>
+  
+      </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password"  formControlName="password" >
+        <div
+        *ngIf="!signUpForm.get('password').valid && signUpForm.get('password').touched"
+        class="error">
+        <div *ngIf="signUpForm.get('password').errors['minlength']">please enter 5 characters or more</div>
+        <div *ngIf="signUpForm.get('password').errors['required']">This field is required!</div>
+  
+      </div>
+        
+      </div>
+
+    <button type="submit" class="btn btn-primary" style="width: 100%;padding:1rem;border-radius: 6px;" [disabled]="signUpForm.invalid" >Sign up</button>
+  </form>
+
+
