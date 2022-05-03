@@ -9,6 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class SignupFormComponent implements OnInit {
   signUpForm:FormGroup;
   message:string;
+  fieldTextType:boolean;
 
   constructor() { }
 
@@ -18,7 +19,8 @@ export class SignupFormComponent implements OnInit {
       'email':new FormControl(null,[Validators.email,Validators.required]), 
       'PhoneNumber':new FormControl(null,[Validators.required]),
       'birthday':new FormControl(null,[Validators.required]),
-      'password':new FormControl(null,[Validators.required,Validators.minLength(5)])
+      'password':new FormControl(null,[Validators.required,Validators.minLength(5)]),
+      'acceptTerms':new FormControl(false,[Validators.requiredTrue])
     })
   }
 
@@ -26,6 +28,11 @@ export class SignupFormComponent implements OnInit {
     console.log(this.signUpForm);
     // this.signUpForm.reset();
  
+
+  }
+
+  showHidePassword(){
+    this.fieldTextType = !this.fieldTextType;
 
   }
 
